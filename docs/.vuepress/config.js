@@ -19,6 +19,7 @@ function walk(path2) {
 module.exports = {
     title: 'Hello VuePress',
     description: 'Just playing around',
+    base:"/vuepress-starter/",
     plugins: [
         '@vuepress/last-updated',
         {
