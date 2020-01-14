@@ -7,9 +7,9 @@ script:
   - yarn docs:build # npm run docs:build
 deploy:
   provider: pages
-  skip_cleanup: true
+  cleanup: true
   local_dir: docs/.vuepress/dist
-  github_token: "62c14f57e1229848fa0a7d10ce0ff5d8ed47e562"
+  token: "${github_token}"
   keep_history: true
   on:
     branch: master
