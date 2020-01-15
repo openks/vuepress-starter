@@ -17,9 +17,10 @@ function walk(path2) {
 // console.log([...walk('blog')])
 
 module.exports = {
-    title: 'Hello VuePress',
+    title: 'VuePress',
     description: 'Just playing around',
     base:"/vuepress-starter/",
+    permalink: "/:year/:month/:day/:slug",
     plugins: [
         '@vuepress/last-updated',
         {
