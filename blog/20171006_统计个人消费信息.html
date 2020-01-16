@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>使用mongodb统计支付宝个人消费信息 | VuePress</title>
+    <meta name="description" content="使用mongodb统计支付宝个人消费信息">
+    
+    
+    <link rel="preload" href="/vuepress-starter/assets/css/0.styles.7110af19.css" as="style"><link rel="preload" href="/vuepress-starter/assets/js/app.d602377f.js" as="script"><link rel="preload" href="/vuepress-starter/assets/js/2.df597015.js" as="script"><link rel="preload" href="/vuepress-starter/assets/js/45.1c603348.js" as="script"><link rel="prefetch" href="/vuepress-starter/assets/js/10.390b27eb.js"><link rel="prefetch" href="/vuepress-starter/assets/js/11.c8b3d5d3.js"><link rel="prefetch" href="/vuepress-starter/assets/js/12.ef2ef4bc.js"><link rel="prefetch" href="/vuepress-starter/assets/js/13.81266c6b.js"><link rel="prefetch" href="/vuepress-starter/assets/js/14.9c53af8e.js"><link rel="prefetch" href="/vuepress-starter/assets/js/15.83e5b1d7.js"><link rel="prefetch" href="/vuepress-starter/assets/js/16.c173e530.js"><link rel="prefetch" href="/vuepress-starter/assets/js/17.762c3f80.js"><link rel="prefetch" href="/vuepress-starter/assets/js/18.ce3bd4df.js"><link rel="prefetch" href="/vuepress-starter/assets/js/19.86c87c02.js"><link rel="prefetch" href="/vuepress-starter/assets/js/20.e6c15e0b.js"><link rel="prefetch" href="/vuepress-starter/assets/js/21.404b84de.js"><link rel="prefetch" href="/vuepress-starter/assets/js/22.bf54e8f1.js"><link rel="prefetch" href="/vuepress-starter/assets/js/23.5c870a53.js"><link rel="prefetch" href="/vuepress-starter/assets/js/24.a08d9748.js"><link rel="prefetch" href="/vuepress-starter/assets/js/25.48c0d022.js"><link rel="prefetch" href="/vuepress-starter/assets/js/26.fc632909.js"><link rel="prefetch" href="/vuepress-starter/assets/js/27.7b5bd39f.js"><link rel="prefetch" href="/vuepress-starter/assets/js/28.28b246fc.js"><link rel="prefetch" href="/vuepress-starter/assets/js/29.8b7f5f49.js"><link rel="prefetch" href="/vuepress-starter/assets/js/3.9eb7500e.js"><link rel="prefetch" href="/vuepress-starter/assets/js/30.e5cd3166.js"><link rel="prefetch" href="/vuepress-starter/assets/js/31.b6be8a1a.js"><link rel="prefetch" href="/vuepress-starter/assets/js/32.407742f8.js"><link rel="prefetch" href="/vuepress-starter/assets/js/33.d010cf21.js"><link rel="prefetch" href="/vuepress-starter/assets/js/34.9d28b8d1.js"><link rel="prefetch" href="/vuepress-starter/assets/js/35.b68c9b23.js"><link rel="prefetch" href="/vuepress-starter/assets/js/36.c90c60ca.js"><link rel="prefetch" href="/vuepress-starter/assets/js/37.190afbd7.js"><link rel="prefetch" href="/vuepress-starter/assets/js/38.cd30f84a.js"><link rel="prefetch" href="/vuepress-starter/assets/js/39.dbe81a03.js"><link rel="prefetch" href="/vuepress-starter/assets/js/4.03027872.js"><link rel="prefetch" href="/vuepress-starter/assets/js/40.2681a762.js"><link rel="prefetch" href="/vuepress-starter/assets/js/41.a30aee2d.js"><link rel="prefetch" href="/vuepress-starter/assets/js/42.9f836b61.js"><link rel="prefetch" href="/vuepress-starter/assets/js/43.83832049.js"><link rel="prefetch" href="/vuepress-starter/assets/js/44.6467b634.js"><link rel="prefetch" href="/vuepress-starter/assets/js/46.1768e4bf.js"><link rel="prefetch" href="/vuepress-starter/assets/js/47.13efde53.js"><link rel="prefetch" href="/vuepress-starter/assets/js/48.13bfc0ba.js"><link rel="prefetch" href="/vuepress-starter/assets/js/49.62070d1f.js"><link rel="prefetch" href="/vuepress-starter/assets/js/5.be4c36a3.js"><link rel="prefetch" href="/vuepress-starter/assets/js/50.170a1d16.js"><link rel="prefetch" href="/vuepress-starter/assets/js/51.f79b2de6.js"><link rel="prefetch" href="/vuepress-starter/assets/js/52.076e06f5.js"><link rel="prefetch" href="/vuepress-starter/assets/js/53.774050a9.js"><link rel="prefetch" href="/vuepress-starter/assets/js/54.02224703.js"><link rel="prefetch" href="/vuepress-starter/assets/js/55.84be7ce6.js"><link rel="prefetch" href="/vuepress-starter/assets/js/56.7d1c9fae.js"><link rel="prefetch" href="/vuepress-starter/assets/js/57.f3dd56ad.js"><link rel="prefetch" href="/vuepress-starter/assets/js/58.5fe211d7.js"><link rel="prefetch" href="/vuepress-starter/assets/js/59.f5e77140.js"><link rel="prefetch" href="/vuepress-starter/assets/js/6.7251bb84.js"><link rel="prefetch" href="/vuepress-starter/assets/js/60.d2d215f3.js"><link rel="prefetch" href="/vuepress-starter/assets/js/61.7ebfe8a8.js"><link rel="prefetch" href="/vuepress-starter/assets/js/62.7e356104.js"><link rel="prefetch" href="/vuepress-starter/assets/js/63.f538e84a.js"><link rel="prefetch" href="/vuepress-starter/assets/js/64.43820060.js"><link rel="prefetch" href="/vuepress-starter/assets/js/65.966a8639.js"><link rel="prefetch" href="/vuepress-starter/assets/js/66.596aaf01.js"><link rel="prefetch" href="/vuepress-starter/assets/js/67.8e49e4df.js"><link rel="prefetch" href="/vuepress-starter/assets/js/68.5d4d1d2e.js"><link rel="prefetch" href="/vuepress-starter/assets/js/69.4d8cc1a1.js"><link rel="prefetch" href="/vuepress-starter/assets/js/7.575faebf.js"><link rel="prefetch" href="/vuepress-starter/assets/js/70.bfde4f12.js"><link rel="prefetch" href="/vuepress-starter/assets/js/71.03769f31.js"><link rel="prefetch" href="/vuepress-starter/assets/js/72.9d657375.js"><link rel="prefetch" href="/vuepress-starter/assets/js/73.d516c589.js"><link rel="prefetch" href="/vuepress-starter/assets/js/74.454f36f2.js"><link rel="prefetch" href="/vuepress-starter/assets/js/75.b03ff530.js"><link rel="prefetch" href="/vuepress-starter/assets/js/76.42192c4c.js"><link rel="prefetch" href="/vuepress-starter/assets/js/77.59270c67.js"><link rel="prefetch" href="/vuepress-starter/assets/js/78.ed8b4632.js"><link rel="prefetch" href="/vuepress-starter/assets/js/79.36f5cd02.js"><link rel="prefetch" href="/vuepress-starter/assets/js/8.bfa7cea3.js"><link rel="prefetch" href="/vuepress-starter/assets/js/80.9b4311f5.js"><link rel="prefetch" href="/vuepress-starter/assets/js/81.f9c4c2c9.js"><link rel="prefetch" href="/vuepress-starter/assets/js/82.74c0b8ed.js"><link rel="prefetch" href="/vuepress-starter/assets/js/83.1bf743d8.js"><link rel="prefetch" href="/vuepress-starter/assets/js/84.717ab74a.js"><link rel="prefetch" href="/vuepress-starter/assets/js/85.c9ee5fa6.js"><link rel="prefetch" href="/vuepress-starter/assets/js/86.f12a97b4.js"><link rel="prefetch" href="/vuepress-starter/assets/js/87.db102c3f.js"><link rel="prefetch" href="/vuepress-starter/assets/js/88.e1220578.js"><link rel="prefetch" href="/vuepress-starter/assets/js/89.bd79320f.js"><link rel="prefetch" href="/vuepress-starter/assets/js/9.4546c6b3.js"><link rel="prefetch" href="/vuepress-starter/assets/js/90.fff9099d.js"><link rel="prefetch" href="/vuepress-starter/assets/js/91.4a27ce0e.js">
+    <link rel="stylesheet" href="/vuepress-starter/assets/css/0.styles.7110af19.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-starter/" class="home-link router-link-active"><!----> <span class="site-name">VuePress</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress-starter/" class="nav-link">Home</a></div><div class="nav-item"><a href="/vuepress-starter/blog/" class="nav-link router-link-active">blog</a></div><div class="nav-item"><a href="http://www.baidu.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  百度
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/openks/vuepress-starter" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuepress-starter/" class="nav-link">Home</a></div><div class="nav-item"><a href="/vuepress-starter/blog/" class="nav-link router-link-active">blog</a></div><div class="nav-item"><a href="http://www.baidu.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  百度
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/openks/vuepress-starter" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/vuepress-starter/blog/20200101_面试总结.html" class="sidebar-link">面试总结</a></li><li><a href="/vuepress-starter/blog/20180411_阿里云.html" class="sidebar-link">阿里云配置gitlab</a></li><li><a href="/vuepress-starter/blog/20180403_react受控组件与非受控组件区别.html" class="sidebar-link">react受控组件与非受控组件区别</a></li><li><a href="/vuepress-starter/blog/20180402_获取树形结构的所有节点.html" class="sidebar-link">获取树形结构的所有节点</a></li><li><a href="/vuepress-starter/blog/20180402_使用react实现数据同步功能.html" class="sidebar-link">使用react实现数据同步功能</a></li><li><a href="/vuepress-starter/blog/20180330_论vue项目api相关代码的组织方式.html" class="sidebar-link">论vue项目api相关代码的组织方式</a></li><li><a href="/vuepress-starter/blog/20180330_使用vue简单实现手机号银行卡的同步显示功能.html" class="sidebar-link">使用vue简单实现手机号银行卡的同步显示功能</a></li><li><a href="/vuepress-starter/blog/20180327_点击tab页切换数据，不同tab页出现数据混乱问题.html" class="sidebar-link">点击tab页切换数据，不同tab页出现数据混乱问题</a></li><li><a href="/vuepress-starter/blog/20180327_对象数组根据某属性过滤对象.html" class="sidebar-link">对象数组根据某属性过滤对象</a></li><li><a href="/vuepress-starter/blog/20180327_字段B的校验规则根据字段A的值发生改变实现方案.html" class="sidebar-link">字段B的校验规则根据字段A的值发生改变实现方案</a></li><li><a href="/vuepress-starter/blog/20180327_如何在文本框blur时,写业务逻辑.html" class="sidebar-link">如何在文本框blur时,写业务逻辑</a></li><li><a href="/vuepress-starter/blog/20180327_vueDevtool 崩溃解决方案.html" class="sidebar-link">vueDevtool崩溃解决方案</a></li><li><a href="/vuepress-starter/blog/20180327_elementui用resetFields()无法清空表格原因.html" class="sidebar-link">elementui用resetFields()无法清空表格原因</a></li><li><a href="/vuepress-starter/blog/20180327_element-ui单独调用某一个字段的校验功能.html" class="sidebar-link">element-ui单独调用某一个字段的校验功能</a></li><li><a href="/vuepress-starter/blog/20180327_el-checkbox选中之后保存key显示value.html" class="sidebar-link">el-checkbox选中之后保存key显示value</a></li><li><a href="/vuepress-starter/blog/20180326_如何让一个数组的内容扩充为原来的10倍.html" class="sidebar-link">如何让一个数组的内容扩充为原来的10倍</a></li><li><a href="/vuepress-starter/blog/20180313_论el-upload的正确使用方法.html" class="sidebar-link">论&lt;el-upload&gt;的正确使用方法</a></li><li><a href="/vuepress-starter/blog/20180309_如何理解redux的middleware中间件.html" class="sidebar-link">如何理解redux的middleware中间件</a></li><li><a href="/vuepress-starter/blog/20180308_vue-router前端权限控制问题.html" class="sidebar-link">vue-router前端权限控制问题</a></li><li><a href="/vuepress-starter/blog/20180306_对于oop面向对象编程的理解.html" class="sidebar-link">对于oop面向对象编程的理解</a></li><li><a href="/vuepress-starter/blog/20180305_自定义组件分类.html" class="sidebar-link">自定义组件分类</a></li><li><a href="/vuepress-starter/blog/20180305_对于`Promise`部分属性的理解.html" class="sidebar-link">对于Promise部分属性的理解</a></li><li><a href="/vuepress-starter/blog/20180226_WFTJS读后感.html" class="sidebar-link">WFTJS读后感</a></li><li><a href="/vuepress-starter/blog/20180209_vuex和redux区别.html" class="sidebar-link">vuex和redux区别</a></li><li><a href="/vuepress-starter/blog/20180207_自定义组件依赖props与服务端交互问题.html" class="sidebar-link">自定义组件依赖props与服务端交互问题</a></li><li><a href="/vuepress-starter/blog/20180205_定制日历功能的实现.html" class="sidebar-link">定制日历功能的实现</a></li><li><a href="/vuepress-starter/blog/20180203_如何解决每个组件都需要引入文件问题.html" class="sidebar-link">如何解决每个组件都需要引入文件问题</a></li><li><a href="/vuepress-starter/blog/20180123_Windows环境下npm_install_报错:_operation_not_permitted的解决方法.html" class="sidebar-link">Windows环境下npminstall报错:operationnot_permitted的解决方法</a></li><li><a href="/vuepress-starter/blog/20180103_vue_filter用法.html" class="sidebar-link">vue_filter的用法</a></li><li><a href="/vuepress-starter/blog/20180102_关于chrome控制台那些我不知道的事.html" class="sidebar-link">关于chrome控制台那些我不知道的事</a></li><li><a href="/vuepress-starter/blog/20171221_使用vuex解决从服务端获取的键值对问题.html" class="sidebar-link">使用vuex解决从服务端获取的键值对问题</a></li><li><a href="/vuepress-starter/blog/20171212_生产包分析.html" class="sidebar-link">生产包分析</a></li><li><a href="/vuepress-starter/blog/20171206_vueStyleguide使用记录.html" class="sidebar-link">vueStyleguide使用记录</a></li><li><a href="/vuepress-starter/blog/20171206-精进_如何成为一个很厉害的人_读书笔记.html" class="sidebar-link">精进如何成为一个很厉害的人读书笔记</a></li><li><a href="/vuepress-starter/blog/20171129_require和import的区别.html" class="sidebar-link">require和import的区别</a></li><li><a href="/vuepress-starter/blog/20171122_垃圾代码引发思考.html" class="sidebar-link">垃圾代码印发的思考</a></li><li><a href="/vuepress-starter/blog/20171109_vue_next_tick更多理解.html" class="sidebar-link">vuenexttick更多理解</a></li><li><a href="/vuepress-starter/blog/20171109_vue_mixins用法.html" class="sidebar-link">vue_mixins用法</a></li><li><a href="/vuepress-starter/blog/20171107_elementui_select展开触发其他事件.html" class="sidebar-link">elementui_select展开触发其他事件</a></li><li><a href="/vuepress-starter/blog/20171102_项目使用stylelint——stylefmt.html" class="sidebar-link">项目使用stylelint</a></li><li><a href="/vuepress-starter/blog/20171101_webpack生产环境几项配置.html" class="sidebar-link">webpack生产环境几项配置</a></li><li><a href="/vuepress-starter/blog/20171031_yarn使用淘宝源.html" class="sidebar-link">yarn使用淘宝源方法</a></li><li><a href="/vuepress-starter/blog/20171031_vue-loader使用css-moudle.html" class="sidebar-link">vue-loader使用css-module方法</a></li><li><a href="/vuepress-starter/blog/20171030-storybook搭建及使用.html" class="sidebar-link">vue-storybook搭建及使用</a></li><li><a href="/vuepress-starter/blog/20171016_vue异步加载所需组件.html" class="sidebar-link">vue异步加载所需组件</a></li><li><a href="/vuepress-starter/blog/20171006_统计个人消费信息.html" class="active sidebar-link">使用mongodb统计支付宝个人消费信息</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vuepress-starter/blog/20171005_淘宝促销数据.html" class="sidebar-link">淘宝促销数据整理</a></li><li><a href="/vuepress-starter/blog/20171005_zsh添加path.html" class="sidebar-link">mac设置全局PATH不起作用解决办法</a></li><li><a href="/vuepress-starter/blog/20170925_天坊前端交接文档.html" class="sidebar-link">天坊前端交接文档</a></li><li><a href="/vuepress-starter/blog/20170915_how-to-use-typescript-on-vuecli-project.html" class="sidebar-link">如何在vuecli项目里使用typescript</a></li><li><a href="/vuepress-starter/blog/20170607_读airbnb标准有感.html" class="sidebar-link">读airbnb标准有感</a></li><li><a href="/vuepress-starter/blog/20170602_使用sass-lint检验自己代码.html" class="sidebar-link">使用sass-lint 检验自己代码</a></li><li><a href="/vuepress-starter/blog/20170602_git_diff_两个版本的某个文件.html" class="sidebar-link">git diff 两个版本的某个文件</a></li><li><a href="/vuepress-starter/blog/20170525_使用vue遇到的相关问题.html" class="sidebar-link">使用vue遇到的相关问题</a></li><li><a href="/vuepress-starter/blog/20170323_git仓库备份.html" class="sidebar-link">git仓库备份</a></li><li><a href="/vuepress-starter/blog/20170323_atom插件安装失败解决办法.html" class="sidebar-link">atom在线插件安装失败解决办法</a></li><li><a href="/vuepress-starter/blog/20170317_ES6新的数据类型Symbol.html" class="sidebar-link">ES6新的数据类型Symbol</a></li><li><a href="/vuepress-starter/blog/20170117_Building APIs with Node.js一书阅读笔记.html" class="sidebar-link">Building APIs with Node.js一书阅读笔记</a></li><li><a href="/vuepress-starter/blog/20170106_Building APIs with Node.js一书阅读问题汇总.html" class="sidebar-link">Building APIs with Node.js一书阅读问题汇总</a></li><li><a href="/vuepress-starter/blog/20161123_mongodb相关内容学习.html" class="sidebar-link">mongodb相关内容学习</a></li><li><a href="/vuepress-starter/blog/20161119_工作中遇到的部分问题.html" class="sidebar-link">工作中遇到的部分问题</a></li><li><a href="/vuepress-starter/blog/20161118_GIT常用命令.html" class="sidebar-link">git常用命令</a></li><li><a href="/vuepress-starter/blog/20161117_mongodb相关内容学习.html" class="sidebar-link">mongodb相关内容学习</a></li><li><a href="/vuepress-starter/blog/20161117_git常用命令.html" class="sidebar-link">git常用命令</a></li><li><a href="/vuepress-starter/blog/20161117_express允许多个网站跨域访问.html" class="sidebar-link">express允许多个网站跨域访问</a></li><li><a href="/vuepress-starter/blog/20161110_BAE部署nodejs项目.html" class="sidebar-link">在BAE上部署nodejs项目</a></li><li><a href="/vuepress-starter/blog/20161017_atom.html" class="sidebar-link">开发利器之atom</a></li><li><a href="/vuepress-starter/blog/20160918_淘宝Rap服务使用简述.html" class="sidebar-link">淘宝Rap服务使用简述</a></li><li><a href="/vuepress-starter/blog/20160918_使用html页面浏览文件夹里的所有图片.html" class="sidebar-link">使用html页面浏览文件夹里的所有图片</a></li><li><a href="/vuepress-starter/blog/20160918_OAuth2.0接入学习含github和新浪.html" class="sidebar-link">OAuth2.0接入学习，含github和新浪</a></li><li><a href="/vuepress-starter/blog/20160624_css3-menu.html" class="sidebar-link">用 CSS3 和 JavaScript 制作径向动画菜单</a></li><li><a href="/vuepress-starter/blog/20160617_独立于后端的前端开发.html" class="sidebar-link">独立于后端的前端开发</a></li><li><a href="/vuepress-starter/blog/20160531_元素高度随兄弟元素高度变化而变化二.html" class="sidebar-link">元素高度随兄弟元素高度变化而变化二</a></li><li><a href="/vuepress-starter/blog/20160530_元素高度随兄弟元素高度变化而变化一.html" class="sidebar-link">元素高度随兄弟元素高度变化而变化一</a></li><li><a href="/vuepress-starter/blog/20160526_sass.html" class="sidebar-link">sass学习</a></li><li><a href="/vuepress-starter/blog/20160405_gulp插件编写.html" class="sidebar-link">gulp预处理插件编写</a></li><li><a href="/vuepress-starter/blog/20160401_使用jslint发现的问题汇总.html" class="sidebar-link">使用jslint发现的问题汇总</a></li><li><a href="/vuepress-starter/blog/20160318_QQ公众平台UI组件观后感.html" class="sidebar-link">QQ公众平台UI组件相关文章观后感</a></li><li><a href="/vuepress-starter/blog/20160311_gulp.html" class="sidebar-link">gulp自动化工具的学习</a></li><li><a href="/vuepress-starter/blog/20160311_fis3.html" class="sidebar-link">前端工程构建工具fis3的学习</a></li><li><a href="/vuepress-starter/blog/20160226_webpack.html" class="sidebar-link">webpack入门学习</a></li><li><a href="/vuepress-starter/blog/20160225_hexo博客搭建.html" class="sidebar-link">hexo博客搭建</a></li><li><a href="/vuepress-starter/blog/20160225_Chrome开发者工具的技巧.html" class="sidebar-link">Chrome 开发者工具的技巧</a></li><li><a href="/vuepress-starter/blog/20160222_hexo_hello-world.html" class="sidebar-link">Hello World</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>把支付宝导出记录导入mongodb，然后通过数据库查数据
+1.支付宝excel导入mongodb
+搜索相关文档后得出mongodb可以导入csv格式的文件使用<a href="https://docs.mongodb.com/manual/reference/program/mongoimport/index.html" target="_blank" rel="noopener noreferrer">mongoimport<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>这边有个插曲：<br>
+在zsh中运行mongo命令时报错说<code>zsh: command not found: mongo</code><br>
+于是找到我的mongo安装目录<code>mongodb-osx-x86_64-3.4.0/bin</code><br>
+傻傻的像windows一样直接运行mongo结果依然报错<code>zsh: command not found: mongo</code>这不科学啊<br>
+找到原来记录说要用<code>./mongo</code>命令才能执行。输入该命令Ok</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># pwd查看当前目录</span>
+➜  bin <span class="token builtin class-name">pwd</span>
+/mongodb-osx-x86_64-3.4.0/bin
+</code></pre></div><p>mongo命令不能全局使用这怎么可以。。开搞让这个命令全局可用<br>
+其实也简单只需要把<code>mongodb-osx-x86_64-3.4.0/bin</code>目录放到PATH即可</p> <blockquote><p>1.打开 应用程序 -&gt; 实用工具 -&gt; 终端；<br>
+2.在终端中定位到自己用户的主目录，输入： cd ~；<br>
+3.创建一个空文件，输入：touch .bash_profile ；<br>
+4.编辑这个文件，输入：open .bash_profile ；<br>
+5.在这个文件中输入：export PATH=${PATH}:&lt;文件目录&gt;；（将&quot;&lt;文件目录&gt;&quot;替换成自己想要的目录）<br>
+例如：export PATH=${PATH}:mongodb-osx-x86_64-2.6.1/bin（我把下载后的文件直接放到了根目录）;<br>
+6.如果需要添加其他的环境变量例如JAVA_HOME，可以输入：export JAVA_HOME=/Library/Java/Home ；<br>
+7.source .bash_profile重启终端，测试,这个时候就可以在用户主目录使用上面配置过的配置文件进行设置mongod --config /mongodb/etc/mongod.conf 来启动数据库了，点击终端Commond+N打开一个新的终端，使用mongo命令来连接数据库，对数据库进行操作,比如：show dbs 显示所有的集合</p></blockquote> <p>因为之前已经设置过了，不知道什么原因导致PATH重置，只需添加PATH并使用命令<code>source .bash_profile</code>重启终端即可</p> <p>继续mongoimport命令<br> <code>mongoimport --db test --collection alipay --file /Users/zyx/Downloads/alipay_record_20170925_1718_1.csv --type csv --headerline --mode upsert</code></p> <div class="language-bash extra-class"><pre class="language-bash"><code>➜  ~ mongoimport --db <span class="token builtin class-name">test</span> --collection alipay  --file  /Users/zyx/Downloads/alipay_record_20170925_1718_1.csv --type csv --headerline --mode upsert
+<span class="token number">2017</span>-09-26T09:16:52.786+0800	connected to: localhost
+<span class="token number">2017</span>-09-26T09:16:52.868+0800	imported <span class="token number">107</span> documents
+</code></pre></div><p>成功导入107条记录</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token operator">&gt;</span> db.alipay.find<span class="token punctuation">(</span><span class="token punctuation">)</span>.limit<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>.<span class="token function-name function">pretty</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token string">&quot;_id&quot;</span> <span class="token builtin class-name">:</span> ObjectId<span class="token punctuation">(</span><span class="token string">&quot;59c9aa8436b7bea4ae668f47&quot;</span><span class="token punctuation">)</span>,
+	<span class="token string">&quot;֧�������׼�¼��ϸ��ѯ&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;�˺�:[zhuyangxing@sohu.com]&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>又出现两个错误<br>
+1.乱码<br>
+2.字段也不对啊<br>
+先删掉再重新导入</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token operator">&gt;</span> db.alipay.remove<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+WriteResult<span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">&quot;nRemoved&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">107</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p><em><strong>务必删掉上面和下面的统计信息后导入</strong></em></p> <div class="language-bash extra-class"><pre class="language-bash"><code>➜  ~ mongoimport --db <span class="token builtin class-name">test</span> --collection alipay  --file  /Users/zyx/Downloads/alipay_record_20170925_1718_2.csv --type csv --headerline --mode upsert
+<span class="token number">2017</span>-09-26T09:26:56.260+0800	connected to: localhost
+<span class="token number">2017</span>-09-26T09:26:56.284+0800	imported <span class="token number">96</span> documents
+</code></pre></div><p>再次进入mongo查看</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token operator">&gt;</span> db.alipay.find<span class="token punctuation">(</span><span class="token punctuation">)</span>.limit<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>.<span class="token function-name function">pretty</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token string">&quot;_id&quot;</span> <span class="token builtin class-name">:</span> ObjectId<span class="token punctuation">(</span><span class="token string">&quot;59c9ace036b7bea4ae669038&quot;</span><span class="token punctuation">)</span>,
+	<span class="token string">&quot;���׺�&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;2017092421001004100535306063<span class="token entity" title="\t">\t</span>&quot;</span>,
+	<span class="token string">&quot;�̻�������&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;02170924212541911944732481548288<span class="token entity" title="\t">\t</span>&quot;</span>,
+	<span class="token string">&quot;���״���ʱ��&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;2017/9/24 21:25&quot;</span>,
+	<span class="token string">&quot;����ʱ��&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;2017/9/24 21:25&quot;</span>,
+	<span class="token string">&quot;�����޸�ʱ��&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;2017/9/24 21:25&quot;</span>,
+	<span class="token string">&quot;������Դ��&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;���������������Ͱͺ��ⲿ�̼ң�&quot;</span>,
+	<span class="token string">&quot;����&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;��ʱ���˽���&quot;</span>,
+	<span class="token string">&quot;���׶Է�&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;�Ϻ����͹�������ס�����޾�Ӫ�����ɷ����޹�˾&quot;</span>,
+	<span class="token string">&quot;��Ʒ����&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;���ͱ�����&quot;</span>,
+	<span class="token string">&quot;���Ԫ��&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">3915.34</span>,
+	<span class="token string">&quot;��/֧&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;֧��&quot;</span>,
+	<span class="token string">&quot;����״̬&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;���׳ɹ�&quot;</span>,
+	<span class="token string">&quot;�����ѣ�Ԫ��&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>,
+	<span class="token string">&quot;�ɹ��˿Ԫ��&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>,
+	<span class="token string">&quot;��ע&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+	<span class="token string">&quot;�ʽ�״̬&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;��֧��&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>2.发现字段对了但是乱码问题依旧存在<br>
+使用其他文本编辑器(nodepad++,editplus,atom等)选择字符集为GB312打开才正常显示，使用utf-8重新保存该csv文件并再次导入即可</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token operator">&gt;</span> db.alipay.find<span class="token punctuation">(</span><span class="token punctuation">)</span>.limit<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>.<span class="token function-name function">pretty</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token string">&quot;_id&quot;</span> <span class="token builtin class-name">:</span> ObjectId<span class="token punctuation">(</span><span class="token string">&quot;59c9b1d536b7bea4ae6691f0&quot;</span><span class="token punctuation">)</span>,
+	<span class="token string">&quot;交易号&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;2017092421001004100535306063<span class="token entity" title="\t">\t</span>&quot;</span>,
+	<span class="token string">&quot;商户订单号&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;02170924212541911944732481548288<span class="token entity" title="\t">\t</span>&quot;</span>,
+	<span class="token string">&quot;交易创建时间&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;2017/9/24 21:25&quot;</span>,
+	<span class="token string">&quot;付款时间&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;2017/9/24 21:25&quot;</span>,
+	<span class="token string">&quot;最近修改时间&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;2017/9/24 21:25&quot;</span>,
+	<span class="token string">&quot;交易来源地&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;其他（包括阿里巴巴和外部商家）&quot;</span>,
+	<span class="token string">&quot;类型&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;即时到账交易&quot;</span>,
+	<span class="token string">&quot;交易对方&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;上海青客公共租赁住房租赁经营管理股份有限公司&quot;</span>,
+	<span class="token string">&quot;商品名称&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;青客宝付款&quot;</span>,
+	<span class="token string">&quot;金额（元）&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">315.34</span>,
+	<span class="token string">&quot;收/支&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;支出&quot;</span>,
+	<span class="token string">&quot;交易状态&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;交易成功&quot;</span>,
+	<span class="token string">&quot;服务费（元）&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>,
+	<span class="token string">&quot;成功退款（元）&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>,
+	<span class="token string">&quot;备注&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+	<span class="token string">&quot;资金状态&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;已支出&quot;</span>
+<span class="token punctuation">}</span>
+<span class="token comment"># 创建交易号的index，设置该列唯一 确保以后不会导入重复数据</span>
+db.alipay.createIndex<span class="token punctuation">(</span><span class="token punctuation">{</span>
+  交易号: <span class="token number">1</span>
+<span class="token punctuation">}</span>, <span class="token punctuation">{</span>
+  unique: <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">#查看都有那些交易方 </span>
+db.alipay.distinct<span class="token punctuation">(</span><span class="token string">&quot;交易对方&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span>
+	<span class="token string">&quot;上海青客公共租赁住房租赁经营管理股份有限公司&quot;</span>,
+	<span class="token string">&quot;沃尔玛大卖场(上海杨行分店)&quot;</span>,
+	<span class="token string">&quot;招商银行&quot;</span>,
+	<span class="token string">&quot;源顺家居专营店&quot;</span>,
+	<span class="token string">&quot;艺舟树下专卖店&quot;</span>,
+	<span class="token string">&quot;中联生活&quot;</span>,
+	<span class="token string">&quot;金牌外婆家(上海IAPM店)&quot;</span>,
+	<span class="token string">&quot;饿了么&quot;</span>,
+	<span class="token string">&quot;newbalance旗舰店&quot;</span>,
+	<span class="token string">&quot;美团/大众点评&quot;</span>,
+	<span class="token string">&quot;苏州冶金图书专营店&quot;</span>,
+	<span class="token string">&quot;天弘基金管理有限公司&quot;</span>,
+	<span class="token string">&quot;上海宝山宜家家居有限公司&quot;</span>,
+	<span class="token string">&quot;苏北蛋饼&quot;</span>,
+	<span class="token string">&quot;麦当劳(淮海中路APM餐厅)&quot;</span>,
+	<span class="token string">&quot;可的(黄兴二)&quot;</span>,
+	<span class="token string">&quot;深圳市丰巢科技有限公司&quot;</span>,
+	<span class="token string">&quot;开宗车品专营店&quot;</span>,
+	<span class="token string">&quot;艾魅嘉数码专营店&quot;</span>,
+	<span class="token string">&quot;辰辉家居专营店&quot;</span>,
+	<span class="token string">&quot;惠乐美生鲜超市&quot;</span>,
+	<span class="token string">&quot;上海市金山区魏达食品店&quot;</span>,
+	<span class="token string">&quot;农夫山泉股份有限公司&quot;</span>,
+<span class="token punctuation">]</span>
+<span class="token comment"># 查看id与金额</span>
+db.alipay.find<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span>, <span class="token punctuation">{</span>
+  <span class="token string">'金额（元）'</span><span class="token builtin class-name">:</span> <span class="token number">1</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>.pretty<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 查看金额最低的5条记录</span>
+db.alipay.find<span class="token punctuation">(</span><span class="token punctuation">)</span>.limit<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>.sort<span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string">'金额（元）'</span><span class="token builtin class-name">:</span> <span class="token number">1</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>.pretty<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 查看金额最高的5条记录</span>
+db.alipay.find<span class="token punctuation">(</span><span class="token punctuation">)</span>.limit<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>.sort<span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string">'金额（元）'</span><span class="token builtin class-name">:</span> -1
+<span class="token punctuation">}</span><span class="token punctuation">)</span>.pretty<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 查查看在饿了么上买了几次</span>
+db.alipay.count<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">&quot;交易对方&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;饿了么&quot;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">5</span>
+<span class="token comment"># 顺便看看饿了么上花了多少钱</span>
+db.alipay.aggregate<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token variable">$match</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    交易对方: <span class="token string">&quot;饿了么&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>, <span class="token punctuation">{</span>
+  <span class="token variable">$group</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    _id: null,
+    total: <span class="token punctuation">{</span>
+      <span class="token variable">$sum</span><span class="token builtin class-name">:</span> <span class="token string">'$金额（ 元）'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span> <span class="token string">&quot;_id&quot;</span> <span class="token builtin class-name">:</span> null, <span class="token string">&quot;total&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span> <span class="token punctuation">}</span>
+<span class="token comment"># 上面结果显示为0 大大出乎意料 仔细查找原因发现条件写错了(真是无比尴尬还让我找了好久原因) </span>
+<span class="token comment"># 详见Q1</span>
+db.alipay.aggregate<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token variable">$match</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    交易对方: <span class="token string">&quot;饿了么&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>, <span class="token punctuation">{</span>
+  <span class="token variable">$group</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    _id: null,
+    total: <span class="token punctuation">{</span>
+      <span class="token variable">$sum</span><span class="token builtin class-name">:</span> <span class="token string">&quot;$金额（元）&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span> <span class="token string">&quot;_id&quot;</span> <span class="token builtin class-name">:</span> null, <span class="token string">&quot;total&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">131.7</span> <span class="token punctuation">}</span>
+<span class="token comment"># 可以按交易方和金额归类总结</span>
+db.alipay.aggregate<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token variable">$group</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    _id: <span class="token string">'$交易对方'</span>,
+    total: <span class="token punctuation">{</span>
+      <span class="token variable">$sum</span><span class="token builtin class-name">:</span> <span class="token string">'$金额（元）'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment"># 显示所有商品名称用逗号分开</span>
+<span class="token comment"># 与sum类似的也有很多 详见 https://docs.mongodb.com/manual/reference/operator/aggregation-group/</span>
+db.alipay.aggregate<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token variable">$group</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    _id: <span class="token string">'$交易对方'</span>,
+    total: <span class="token punctuation">{</span>
+      <span class="token variable">$sum</span><span class="token builtin class-name">:</span> <span class="token string">'$金额（元）'</span>
+    <span class="token punctuation">}</span>,
+    name: <span class="token punctuation">{</span>
+      <span class="token variable">$addToSet</span><span class="token builtin class-name">:</span> <span class="token string">'$商品名称'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>, <span class="token punctuation">{</span>
+  <span class="token variable">$sort</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    total: -1
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span>, <span class="token punctuation">{</span>
+  allowDiskUse: <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 只显示第一个商品名称</span>
+db.alipay.aggregate<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token variable">$group</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    _id: <span class="token string">'$交易对方'</span>,
+    total: <span class="token punctuation">{</span>
+      <span class="token variable">$sum</span><span class="token builtin class-name">:</span> <span class="token string">'$金额（元）'</span>
+    <span class="token punctuation">}</span>,
+    name: <span class="token punctuation">{</span>
+      <span class="token variable">$first</span><span class="token builtin class-name">:</span> <span class="token string">'$商品名称'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>, <span class="token punctuation">{</span>
+  <span class="token variable">$sort</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    total: -1
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span>, <span class="token punctuation">{</span>
+  allowDiskUse: <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 根据时间段统计</span>
+db.alipay.aggregate<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token variable">$match</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    付款时间: <span class="token punctuation">{</span>
+      <span class="token variable">$gt</span><span class="token builtin class-name">:</span> new Date<span class="token punctuation">(</span><span class="token number">2017</span>, <span class="token number">9</span>, <span class="token number">10</span><span class="token punctuation">)</span>,
+      <span class="token variable">$lt</span><span class="token builtin class-name">:</span> new Date<span class="token punctuation">(</span><span class="token number">2017</span>, <span class="token number">9</span>, <span class="token number">20</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>, <span class="token punctuation">{</span>
+  <span class="token variable">$group</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    _id: <span class="token string">'$交易对方'</span>,
+    total: <span class="token punctuation">{</span>
+      <span class="token variable">$sum</span><span class="token builtin class-name">:</span> <span class="token string">'$金额（元）'</span>
+    <span class="token punctuation">}</span>,
+    name: <span class="token punctuation">{</span>
+      <span class="token variable">$first</span><span class="token builtin class-name">:</span> <span class="token string">'$商品名称'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>, <span class="token punctuation">{</span>
+  <span class="token variable">$sort</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    total: -1
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span>, <span class="token punctuation">{</span>
+  allowDiskUse: <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>查看下最近一年经过支付宝的消费情况<br>
+先导入数据<br> <code>mongoimport --db test --collection alipay --file /Users/zyx/Downloads/alipay_record_20170927_1409_2.csv --type csv --headerline --mode upsert</code></p> <h3 id="q1-查看饿了么的花费"><a href="#q1-查看饿了么的花费" class="header-anchor">#</a> Q1:查看饿了么的花费</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 顺便看看饿了么上花了多少钱</span>
+db.alipay.aggregate<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token variable">$match</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    交易对方: <span class="token string">&quot;饿了么&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>, <span class="token punctuation">{</span>
+  <span class="token variable">$group</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    _id: null,
+    total: <span class="token punctuation">{</span>
+      <span class="token variable">$sum</span><span class="token builtin class-name">:</span> <span class="token string">'$金额（ 元）'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span> <span class="token string">&quot;_id&quot;</span> <span class="token builtin class-name">:</span> null, <span class="token string">&quot;total&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span> <span class="token punctuation">}</span>
+<span class="token comment"># 上面结果显示为0 大大出乎意料 仔细查找原因发现条件写错了(真是无比尴尬还让我找了好久原因) </span>
+</code></pre></div><p>结果怎么是0,明显又错了<br>
+查找了N久在官方文档上查到了<a href="https://docs.mongodb.com/manual/reference/operator/aggregation/sum/index.html#non-numeric-or-non-existent-fields" target="_blank" rel="noopener noreferrer">相关信息<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+原因只有两种<br>
+1.全部都非数字返回0<br>
+2.该字段不存在返回0<br>
+我这次就是原因，找了N久发现可以按照该字段排序，而且该字段全部有值,但是返回的却是0
+最后发现***字段名错误***</p> <h3 id="q2-mongodb如何按照某字段做增量导入"><a href="#q2-mongodb如何按照某字段做增量导入" class="header-anchor">#</a> Q2:mongodb如何按照某字段做增量导入</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 创建交易号的index，设置该列唯一</span>
+db.alipay.createIndex<span class="token punctuation">(</span><span class="token punctuation">{</span>
+  交易号: <span class="token number">1</span>
+<span class="token punctuation">}</span>, <span class="token punctuation">{</span>
+  unique: <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>只需要给某字段添加索引并设置唯一即可<br>
+再次导入相同交易号时就无法导入</p> <h3 id="q3-mongodb某列类型修改-原类型为string修改后为date"><a href="#q3-mongodb某列类型修改-原类型为string修改后为date" class="header-anchor">#</a> Q3:MongoDB某列类型修改(原类型为String修改后为Date)</h3> <p>根据付款时间段进行统计的时候发现没结果，仔细查看发现这个字段是字符串需要把字符串转成日期</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看该字段为字符串的个数 </span>
+<span class="token comment"># 至于$type 详见这里https://docs.mongodb.com/manual/reference/operator/query/type/index.html</span>
+<span class="token comment"># 根据数量判断表里该列数据全部都是字符串格式</span>
+db.alipay.find<span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string">'付款时间'</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token variable">$type</span><span class="token builtin class-name">:</span> <span class="token number">2</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>.count<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">96</span>
+mkp
+<span class="token comment"># 修改该列数据类型</span>
+db.alipay.find<span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string">&quot;付款时间&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token variable">$type</span><span class="token builtin class-name">:</span> <span class="token number">2</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>.forEach<span class="token punctuation">(</span>
+  <span class="token keyword">function</span> <span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    x.付款时间 <span class="token operator">=</span> new Date<span class="token punctuation">(</span>x.付款时间<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    db.alipay.save<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment"># 再次查看该列数据类型为字符串的数据发现结果已经是0了</span>
+db.alipay.find<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'付款时间'</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span><span class="token variable">$type</span><span class="token builtin class-name">:</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span>.count<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">0</span>
+</code></pre></div><p>*** 最后才发现一年的数据量其实也没多少 直接用excel的筛选求和更好 真不应该因为手里有🔨就把所有问题都看成钉子 ***</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/openks/vuepress-starter/edit/master/docs/blog/20171006_统计个人消费信息.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">1/14/2020, 6:23:51 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vuepress-starter/blog/20171016_vue异步加载所需组件.html" class="prev">vue异步加载所需组件</a></span> <span class="next"><a href="/vuepress-starter/blog/20171005_淘宝促销数据.html">淘宝促销数据整理</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vuepress-starter/assets/js/app.d602377f.js" defer></script><script src="/vuepress-starter/assets/js/2.df597015.js" defer></script><script src="/vuepress-starter/assets/js/45.1c603348.js" defer></script>
+  </body>
+</html>
