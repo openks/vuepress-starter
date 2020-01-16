@@ -1,5 +1,5 @@
 ---
-title: 20180327_elementui用resetFields()无法清空表格原因
+title: elementui用resetFields()无法清空表格原因
 date: 2018-03-27 15:44:20  
 description: 20180327_elementui用resetFields()无法清空表格原因
 ---

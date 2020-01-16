@@ -1,5 +1,5 @@
 ---
-title: 20180327_vueDevtool 崩溃解决方案
+title: vueDevtool崩溃解决方案
 date: 2018-03-27 15:44:21  
 description: 20180327_vueDevtool 崩溃解决方案
 ---

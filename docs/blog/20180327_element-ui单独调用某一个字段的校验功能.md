@@ -1,5 +1,5 @@
 ---
-title: 20180327_element-ui单独调用某一个字段的校验功能
+title: element-ui单独调用某一个字段的校验功能
 date: 2018-03-27 15:44:11  
 description: 20180327_element-ui单独调用某一个字段的校验功能
 ---

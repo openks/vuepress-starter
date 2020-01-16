@@ -12,6 +12,8 @@ function walk(path2) {
             arr.push("/" + path2 + "/" + fileName.replace(".md", ""))
         }
     })
+    arr = arr.reverse()
+    // console.log(arr)
     return arr
 }
 // console.log([...walk('blog')])
@@ -20,7 +22,7 @@ module.exports = {
     title: 'VuePress',
     description: 'Just playing around',
     base: "/vuepress-starter/",
-    permalink: "/:year/:month/:day/:slug",
+    // permalink: "/:year/:month/:day/:slug",
     plugins: [
         '@vuepress/last-updated',
         {
@@ -31,6 +33,12 @@ module.exports = {
         }],
     themeConfig: {
         lastUpdated: '上次更新',
+        repo: 'openks/vuepress-starter',
+        repoLabel: '查看源码',
+        docsDir: 'docs',
+        editLinks: true,
+        // 默认为 "Edit this page"
+        editLinkText: '在 GitHub 上编辑此页',
         nav: [
             { text: 'Home', link: '/' },
             { text: 'blog', link: '/blog/' },
