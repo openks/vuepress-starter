@@ -9,6 +9,6 @@
   "license": "MIT",
   "devDependencies": {
     "moment": "^2.24.0",
-    "vuepress": "^1.2.0"
+    "vuepress": "^1.7.0"
   }
 }
